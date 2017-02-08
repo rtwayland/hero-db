@@ -18,19 +18,20 @@ db.init.createHeroTable([], (err, results) => {
 module.exports = {
     create(req, res) {
         db.hero.create_hero([
-            req.body.name,
-            req.body.origin,
-            req.body.hometown,
-            req.body.imageUrl
-        ], (err, results) => {
-            if (err) {
-                console.error(err);
-                return res.send(err);
-            } else {
-                // console.log(results);
-                return res.status(200).send(results);
-            }
-        });
+                req.body.name,
+                req.body.origin,
+                req.body.hometown,
+                req.body.imageUrl
+            ],
+            (err, results) => {
+                if (err) {
+                    console.error(err);
+                    return res.send(err);
+                } else {
+                    // console.log(results);
+                    return res.status(200).send(results);
+                }
+            });
     },
     getHeroes(req, res) {
         db.hero.read_heroes([], (err, results) => {
@@ -53,6 +54,40 @@ module.exports = {
                     return res.status(404).send('No Hero Found')
                 }
                 return res.status(200).send(results[0]);
+            }
+        });
+    },
+    update(req, res) {
+        db.hero.update_hero([
+                req.params.id,
+                req.body.name,
+                req.body.origin,
+                req.body.hometown,
+                req.body.imageUrl
+            ],
+            (err, results) => {
+                if (err) {
+                    console.error(err);
+                    return res.send(err);
+                } else {
+                    if (results.length === 0) {
+                        return res.status(404).send('No Hero Found')
+                    }
+                    return res.status(200).send(results[0]);
+                }
+
+            });
+    },
+    delete(req, res) {
+        db.hero.delete_hero([req.params.id], (err, results) => {
+            if (err) {
+                console.error(err);
+                return res.send(err);
+            } else {
+                if (results.length === 0) {
+                    return res.status(404).send('No Hero Found')
+                }
+                return res.status(200).send(`Hero ${results[0].name} is dead.`);
             }
         });
     }

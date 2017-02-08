@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 app.get('/api/heroes', heroCtrl.getHeroes);
 app.get('/api/heroes/:id', heroCtrl.getHero);
 app.post('/api/heroes', heroCtrl.create);
+app.put('/api/heroes/:id', heroCtrl.update);
 
+app.delete('/api/heroes/:id', heroCtrl.delete);
 // Power Endpoints
 
 // Hero_Power Endpoints
