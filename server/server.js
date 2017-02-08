@@ -1,7 +1,7 @@
 // Setup Express App
 
 // Controllers
-
+var heroCtrl = require('./controllers/heroCtrl');
 // Body Parser
 
 // Hero Endpoints
