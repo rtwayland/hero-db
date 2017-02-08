@@ -1,6 +1,4 @@
-// Default Express App
-
-// Connect Massive
+// Setup Express App
 
 // Controllers
 
