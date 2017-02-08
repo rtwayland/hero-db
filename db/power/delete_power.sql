@@ -1,2 +1,2 @@
--- DELETE * Power
--- WHERE id = $1;
+DELETE * Power
+WHERE id = $1;

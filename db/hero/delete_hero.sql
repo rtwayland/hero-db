@@ -1,2 +1,2 @@
--- DELETE * Product
--- WHERE id = $1;
+DELETE * Product
+WHERE id = $1;

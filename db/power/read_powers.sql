@@ -1,1 +1,1 @@
--- SELECT * FROM Power
+SELECT * FROM Power
