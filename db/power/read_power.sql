@@ -1,2 +1,2 @@
-SELECT * FROM Power
-WHERE id = $1
+-- SELECT * FROM Power
+-- WHERE id = $1
